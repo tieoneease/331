@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     Graph graph(argv[1]);
     
     // determine whether an input graph is biparite
-    cout << graph.isBipartitePrintTraversePath(0) << endl;;
+    cout << (graph.isBipartitePrintTraversePath(0)? "TRUE": "FALSE") << endl;
 
     return EXIT_SUCCESS;
 }

@@ -1,15 +1,10 @@
-CXX=g++ -g -std=c++11
-EXECUTABLE=prog
+CPPFLAGS=-std=c++11 -g -O3
 
-SRC=$(wildcard *.h *.cpp)
-OBJ=$(SRC:%.h %.cpp=%.o)
+bstree: main.o 
+	g++ main.o -o bipartite
 
-all: $(OBJ)
-	$(CXX) -o $(EXECUTABLE) $^
-
-%.o: %.c
-	$(CXX) -o $@ -c $<
+main.o: main.cpp graph.h 
+	g++ $(CPPFLAGS) -c main.cpp
 
 clean:
-	rm -f *.o
-	rm -f $(EXECUTABLE)
+	rm *.o -f
